@@ -1,3 +1,48 @@
+
+
+<div class="container">
+  <div class="container" id="body">
+
+    <!---start usersList section--->
+    <div class="row">
+
+      <div *ngFor="let c of categories" class="col-md-3">
+        <app-list-accounts-component [category]="c"></app-list-accounts-component>
+      </div>
+    </div>
+    <!---end usersList section--->
+  </div>
+
+</div>
+
+
+
+<h4 class="container">
+  Add
+</h4>
+
+<app-add-user (sender)="update($event)"></app-add-user>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <link
   href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
   rel="stylesheet">

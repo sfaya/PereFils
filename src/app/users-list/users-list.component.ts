@@ -41,7 +41,7 @@ birthDate: "1999-06-30",
 accountCategory: "Customer",
 email: "marlon@brando.com",
 password: "test",
-picture: "https://bootdey.com/img/Content/avatar/avatar1.png", 
+picture: "https://bootdey.com/img/Content/avatar/avatar1.png",
 profession: "Software Engineer"
 },
 {
@@ -66,7 +66,9 @@ password: "test",
 picture: "https://bootdey.com/img/Content/avatar/avatar5.png",
 profession: "Software Engineer"
 }
-]
+];
+
+categories=['Admin', 'Customer', 'Golden', 'Blocked']
 
 // La variable permetant de récupérer la valeur de recherche
 filter!:string;
@@ -86,5 +88,9 @@ filter!:string;
 if (index > -1) {
    this.usersList.splice(index, 1);
 }
+  }
+
+  update(data: User){
+      this.usersList.push(data);
   }
 }

@@ -8,9 +8,11 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ListAccountsComponentComponent } from './list-accounts-component/list-accounts-component.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
     UsersListComponent,
     UpdateUserComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ListAccountsComponentComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

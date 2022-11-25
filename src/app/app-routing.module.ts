@@ -7,12 +7,12 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { UsersListComponent } from './users-list/users-list.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'Home', pathMatch:'full'},
-  {path:'Home',component:HomeComponent},
+
+ //{path:'',component:HomeComponent},
   {path:'products', component:ProductsListComponent},
   {path:'users', component:UsersListComponent},
   {path:'updateUser/:param', component:UpdateUserComponent},
-  {path:'**', component:NotFoundComponent}
+ {path:'**', component:NotFoundComponent}
 ];
 
 @NgModule({
