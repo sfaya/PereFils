@@ -21,27 +21,10 @@
   Add
 </h4>
 
-<app-add-user (sender)="update($event)"></app-add-user>
+<app-add-user (sender)="update($event)"  [user]="updatedUser"></app-add-user>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- List Users -->
 
 <link
   href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
@@ -87,7 +70,7 @@
                       <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                     </span>
                   </a>
-                  <a class="table-link" [routerLink]="['/updateUser', id]">
+                  <a class="table-link" (click)="up(user)">
                     <span class="fa-stack">
                       <i class="fa fa-square fa-stack-2x"></i>
                       <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>

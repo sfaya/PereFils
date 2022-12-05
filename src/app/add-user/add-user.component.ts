@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { User } from '../Models/user';
 
@@ -26,9 +26,12 @@ addUserForm= this.fb.group({
   constructor( private fb:FormBuilder) { }
 
   ngOnInit(): void {
+
   }
 
 @Output() sender=new EventEmitter();
+
+@Input() user!:User;
 
 
   save(){
@@ -37,4 +40,17 @@ addUserForm= this.fb.group({
 
     this.sender.emit(User);
   }
+
+
+  init( u:User){
+//this.addUserForm.setValue({idCustomer:u.idCustomer, firstName:u.firstName, lastName:u.lastName });
+this.addUserForm.patchValue({idCustomer:u.idCustomer, firstName:u.firstName, lastName:u.lastName });
+  }
+
+
+  // ngAfterViewInit(){
+  //    if(this.user){
+  //     console.log(this.user);
+  //   }
+  // }
 }

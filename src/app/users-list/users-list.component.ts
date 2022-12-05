@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { AddUserComponent } from '../add-user/add-user.component';
 import { User } from '../Models/user';
 
 @Component({
@@ -73,6 +74,9 @@ categories=['Admin', 'Customer', 'Golden', 'Blocked']
 // La variable permetant de récupérer la valeur de recherche
 filter!:string;
 
+
+@ViewChild(AddUserComponent) private addUserCp!: AddUserComponent;
+
   constructor( private route:Router) { }
 
   ngOnInit(): void {
@@ -91,6 +95,13 @@ if (index > -1) {
   }
 
   update(data: User){
+
       this.usersList.push(data);
+  }
+
+updatedUser!:User;
+  up(u:User){
+    this.updatedUser=u;
+    this.addUserCp.init(u);
   }
 }
